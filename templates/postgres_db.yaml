@@ -6,4 +6,3 @@ metadata:
 spec:
   providerConfigRef:
     name: platform
-  name: crossplane-example-db
