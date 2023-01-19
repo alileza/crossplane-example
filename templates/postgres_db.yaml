@@ -4,11 +4,9 @@ metadata:
   name: crossplane-example-db
   namespace: platform
 spec:
+  providerConfigRef:
+    name: platform
   forProvider:
-    name: example-provider
+    name: postgres-db
     kind: PostgresInstance
-    connectionDetails:
-      secret:
-        name: example-secret
-        key: connection-string
   name: crossplane-example-db
