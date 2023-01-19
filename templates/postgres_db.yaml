@@ -6,7 +6,4 @@ metadata:
 spec:
   providerConfigRef:
     name: platform
-  forProvider:
-    name: postgres-db
-    kind: PostgresInstance
   name: crossplane-example-db
