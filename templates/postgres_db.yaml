@@ -1,7 +1,7 @@
 apiVersion: postgresql.sql.crossplane.io/v1alpha1
 kind: Database
 metadata:
-  name: example-db
+  name: crossplane_example_db
   namespace: platform
 spec:
   forProvider:
@@ -11,4 +11,4 @@ spec:
       secret:
         name: example-secret
         key: connection-string
-  name: example-db
+  name: crossplane_example_db
