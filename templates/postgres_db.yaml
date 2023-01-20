@@ -6,13 +6,6 @@ metadata:
 spec:
   providerConfigRef:
     name: platform
-  forProvider: 
-    createMode: Default
-    administratorLogin: postgres
-    resourceGroupNameSelector:
-      matchControllerRef: true
-    minimalTlsVersion: TLS1_2
-    sslEnforcement: Disabled
   writeConnectionSecretToRef:
     namespace: platform
     name: example-secret
