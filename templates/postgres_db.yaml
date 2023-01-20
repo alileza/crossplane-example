@@ -6,6 +6,8 @@ metadata:
 spec:
   providerConfigRef:
     name: platform
+  forProvider: 
+    connectionLimit: -1
   writeConnectionSecretToRef:
     namespace: platform
     name: example-secret
