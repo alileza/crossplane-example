@@ -15,5 +15,6 @@ spec:
     sslEnforcement: Disabled
   writeConnectionSecretToRef:
     namespace: platform
+    name: example-secret
   providerConfigRef:
     name: default
