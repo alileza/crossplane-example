@@ -1,0 +1,29 @@
+# MISSING OBJECT TYPE https://github.com/SadaPay/terraform-modules/blob/servicedb/modules/service_db/main.tf#L74
+---
+apiVersion: postgresql.sql.crossplane.io/v1alpha1
+kind: Grant
+metadata:
+  name: liquibase-notifications-service-role-grant
+spec:
+  forProvider:
+    privileges:
+      - CREATE
+    withOption: GRANT
+    roleRef:
+      name: liquibase-notifications-service-role
+    databaseRef:
+      name: notifications-service-db
+---
+apiVersion: postgresql.sql.crossplane.io/v1alpha1
+kind: Grant
+metadata:
+  name: liquibase-notifications-service-role-grant-wrapper-privileges
+spec:
+  forProvider:
+    privileges:
+      - USAGE
+    withOption: GRANT
+    roleRef:
+      name: liquibase-notifications-service-role
+    databaseRef:
+      name: notifications-service-db

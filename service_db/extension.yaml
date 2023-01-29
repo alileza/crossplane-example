@@ -1,0 +1,9 @@
+apiVersion: postgresql.sql.crossplane.io/v1alpha1
+kind: Extension
+metadata:
+  name: liquibase-notifications-service-role-grant
+spec:
+  forProvider:
+    extension: pgcrypto
+  providerConfigRef:
+    name: notifications-service-db

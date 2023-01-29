@@ -1,0 +1,19 @@
+apiVersion: postgresql.sql.crossplane.io/v1alpha1
+kind: Role
+metadata:
+  name: liquibase-notifications-service-role
+spec:
+  forProvider:
+    connectionLimit: 10
+    privileges:
+      login: true
+    configurationParameters:
+      - name: 'statement_timeout'
+        value: '0'
+      - name: 'idle_in_transaction_session_timeout'
+        value: '0'
+      - name: 'search_path'
+        value: []
+  writeConnectionSecretToRef:
+    namespace: platform
+    name: connection-secret-notification-service-db 

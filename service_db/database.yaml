@@ -1,0 +1,13 @@
+apiVersion: postgresql.sql.crossplane.io/v1alpha1
+kind: Database
+metadata:
+  name: notifications-service-db # database name
+  namespace: platform            # namespace name
+spec:
+  providerConfigRef:
+    name: sada-system # provider config name, which refer to connection to our db cluster
+  forProvider: {}
+  # A reference to the secret that you want this managed resource to write its connection secret that you’d be able to mount to your pods in the same namespace
+  writeConnectionSecretToRef:
+    namespace: platform
+    name: connection-secret-notification-service-db 
